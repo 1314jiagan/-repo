@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  /*使得图片最大宽度不超过这一行*/
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.logo {
+  display: inline-block;
+  /*使得下移*/
+
+  float: left;
+  margin-top: 8px;
+  /*与右边字体对齐，（26+42）/2=34，所以需要下移8像素*/
+
+  margin-left: 10px;
+  /*写代码与左边10px*/
+}
+/*如果图片看不出来，可以在此添加一个背景颜色*/
+
+.logo > img {
+  height: 26px;
+  vertical-align: top;
+  /*如果图片超出border，用此方法去除多余的超出图片，vat+tab*/
+}
+.nav {
+  float: right;
+  margin-left: 20px;
+  /*首页与写代码中间20px*/
+}
+ul > li {
+  float: left;
+  padding: 4px 0.5em;
+  /*上下4像素 左右0.5字*/
+
+  line-height: 32px;
+  /*用于调整字的高度*/
+}
+ul {
+  display: inline-block;
+}
+header {
+  background: grey;
+  color: white;
+  /*使得header里所有字变成白色*/
+}
+.content {
+  /*由于border占两像素，所以就会导致ad的内容无法提上来，这里可以使用outline来调试*/
+
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  /*使得左右auto，居中,只对块级元素有用，不会覆盖上下的margin*/
+}
+.content > aside {
+  width: 200px;
+  background: green;
+  height: 300px;
+  /*一般是用内容支撑起来，一般不允许添加高度*/
+
+  float: left;
+}
+.content > main {
+  background: green;
+  width: 500px;
+  height: 300px;
+  float: left;
+}
+.content > .ad {
+  background: #333;
+  width: 100px;
+  height: 300px;
+  float: left;
+}
+.imagelist {
+  outline: 1px solid red;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.imagelist > .x > .image {
+  width: 191px;
+  height: 191px;
+  background: #000;
+  border: 1px solid blue;
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 12px;
+}
+.imagelist > .x {
+  margin-right: -12px; /*采用负margin来使得图片的最右边消掉12px，此时需要更改clearfix到x处*/
+}
