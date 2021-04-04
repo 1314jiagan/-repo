@@ -31,7 +31,7 @@ img {
 
 .logo > img {
   height: 26px;
-  vertical-align: top;
+  vertical-align: middle;
   /*如果图片超出border，用此方法去除多余的超出图片，vat+tab*/
 }
 .nav {
